@@ -1,0 +1,24 @@
+2025/03/23-18:02:00.393 2d20 Reusing MANIFEST C:\Users\Taylor\OneDrive\ArquiServer\WhatsAPI\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/23-18:02:00.394 2d20 Recovering log #39
+2025/03/23-18:02:00.428 2d20 Reusing old log C:\Users\Taylor\OneDrive\ArquiServer\WhatsAPI\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000039.log 
+2025/03/23-18:02:05.480 35dc Level-0 table #44: started
+2025/03/23-18:02:05.511 35dc Level-0 table #44: 152432 bytes OK
+2025/03/23-18:02:05.512 35dc Delete type=0 #39
+2025/03/23-18:02:05.513 35dc Manual compaction at level-0 from '\x00\x18\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x19\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/03/23-18:02:05.516 2d20 Level-0 table #46: started
+2025/03/23-18:02:05.536 2d20 Level-0 table #46: 445 bytes OK
+2025/03/23-18:02:05.545 2d20 Delete type=0 #43
+2025/03/23-18:02:05.547 2d20 Manual compaction at level-0 from '\x00\x19\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1a\x00\x00\x00' @ 0 : 0; will stop at '\x00\x19\x00\x00\x05' @ 64401 : 0
+2025/03/23-18:02:05.547 2d20 Compacting 1@0 + 1@1 files
+2025/03/23-18:02:05.566 2d20 Generated table #47@0: 2834 keys, 68534 bytes
+2025/03/23-18:02:05.566 2d20 Compacted 1@0 + 1@1 files => 68534 bytes
+2025/03/23-18:02:05.568 2d20 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/03/23-18:02:05.569 2d20 Delete type=2 #46
+2025/03/23-18:02:05.570 2d20 Manual compaction at level-0 from '\x00\x19\x00\x00\x05' @ 64401 : 0 .. '\x00\x1a\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/03/23-18:02:10.201 35dc Compacting 1@1 + 1@2 files
+2025/03/23-18:02:10.310 35dc Generated table #48@1: 13687 keys, 491737 bytes
+2025/03/23-18:02:10.310 35dc Compacted 1@1 + 1@2 files => 491737 bytes
+2025/03/23-18:02:10.325 35dc compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/03/23-18:02:10.326 35dc Delete type=2 #41
+2025/03/23-18:02:10.326 35dc Delete type=2 #44
+2025/03/23-18:02:10.326 35dc Delete type=2 #47
