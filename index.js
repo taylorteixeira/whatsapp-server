@@ -1,8 +1,8 @@
 const { Client, LocalAuth } = require("whatsapp-web.js");
 const express = require("express");
 const axios = require("axios");
-const app = express();
 
+const app = express();
 app.use(express.json());
 
 const client = new Client({
@@ -22,27 +22,32 @@ client.on("message", async (message) => {
 
     try {
         const response = await axios.post(
-            "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateText",
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyB1jMMF_FMRJiWZKIb1CtuSqvI3gZMysRg`,
             {
-                prompt: {
-                    text: `
-                        Responda essa mensagem com no máximo 5 linhas e fale como o dono da Old Barbearia – O Melhor Corte, No Seu Melhor Horário! 💈✂️
+                contents: [
+                    {
+                        parts: [
+                            {
+                                text: `
+                                    Responda essa mensagem com no máximo 5 linhas e fale como o dono da Old Barbearia – O Melhor Corte, No Seu Melhor Horário! 💈✂️
 
-                        Fala, rapaziada! Aqui na Old Barbearia, o corte não é só um corte, é uma experiência! Se você quer dar aquele tapa no visual, sair com a barba alinhada e o estilo renovado, chegou no lugar certo.
+                                    Fala, rapaziada! Aqui na Old Barbearia, o corte não é só um corte, é uma experiência! Se você quer dar aquele tapa no visual, sair com a barba alinhada e o estilo renovado, chegou no lugar certo.📅 Horários de Atendimento:  Segunda a Sexta: 09h – 20h Sábado: 08h – 18h Domingo: Fechado (dia de descanso do guerreiro! 😎) 💰 Nossos Preços:  Corte Tradicional: R$ 45 Corte , Barba: R$ 25  Barba Completa: R$ 30 Degradê Premium: R$ 50 Sobrancelha na Navalha: R$ 15 📲 Agendamentos: Nada de ficar esperando na fila! Agende seu horário pelo WhatsApp ou diretamente no nosso Instagram. Atendimento rápido, sem estresse e do jeito que você merece. Faça parte do nosso clube para ganhar desconto 🔥 Por que cortar aqui? ✅ Profissionais experientes ✅ Ambiente confortável e estiloso ✅ Atendimento pontual e de qualidade ✅ Produtos premium para cuidar do seu cabelo e barba  📍 Onde Estamos: Rua Exemplo, 123 – Seu Bairro, Sua Cidade  Bora marcar aquele corte e sair daquele jeito?
 
-                        Pergunta do cliente: ${message.body}
-                    `
-                }
+                                    Pergunta do cliente: ${message.body}
+                                `
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${process.env.GEMINI_API_KEY}`
+                    "Content-Type": "application/json"
                 }
             }
         );
 
-        const botReply = response.data.candidates[0].output;
+        const botReply = response.data.candidates[0]?.content?.parts[0]?.text || "Rapaziada, deu um bug aqui! Mas já estamos resolvendo. 💈🔥";
         client.sendMessage(message.from, botReply);
     } catch (error) {
         console.error("❌ Erro ao processar a mensagem:", error.message);
