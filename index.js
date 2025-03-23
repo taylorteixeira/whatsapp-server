@@ -43,24 +43,30 @@ client.on("message", async (message) => {
             {
                 headers: {
                     "Content-Type": "application/json"
-                }
+                },
+                timeout: 10000 // 10 segundos de timeout
             }
         );
 
-        const botReply = response.data.candidates[0]?.content?.parts[0]?.text || "Rapaziada, deu um bug aqui! Mas já estamos resolvendo. 💈🔥";
-        client.sendMessage(message.from, botReply);
+        const botReply = response?.data?.candidates?.[0]?.content?.parts?.[0]?.text || 
+            "Rapaziada, deu um bug aqui! Mas já estamos resolvendo. 💈🔥";
+        
+        await client.sendMessage(message.from, botReply);
     } catch (error) {
-        console.error("❌ Erro ao processar a mensagem:", error.message);
-        client.sendMessage(message.from, "Rapaziada, deu um bug aqui! Mas já estamos resolvendo. 💈🔥");
+        console.error("❌ Erro ao processar a mensagem:", error.response?.data || error.message);
+        await client.sendMessage(message.from, "Rapaziada, deu um bug aqui! Mas já estamos resolvendo. 💈🔥");
     }
 });
-
-client.initialize();
 
 // Endpoint para verificar se o bot está rodando
 app.get("/", (req, res) => {
     res.send("Bot do WhatsApp está rodando!");
 });
+
+// Inicializa o bot apenas fora do ambiente da Vercel
+if (process.env.NODE_ENV !== "production") {
+    client.initialize();
+}
 
 // Exporta o app para a Vercel
 module.exports = app;
