@@ -22,26 +22,31 @@ client.on("message", async (message) => {
 
     try {
         const response = await axios.post(
-            "https://api.langflow.astra.datastax.com/lf/9bb14e0c-5847-41f2-8bfa-602c1f56ac04/api/v1/run/2b719248-4a16-4464-8bfa-602c1f56ac04?stream=false",
+            "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateText",
             {
-                input_value: message.body,
-                output_type: "chat",
-                input_type: "chat",
-                tweaks: {}
+                prompt: {
+                    text: `
+                        Responda essa mensagem com no máximo 5 linhas e fale como o dono da Old Barbearia – O Melhor Corte, No Seu Melhor Horário! 💈✂️
+
+                        Fala, rapaziada! Aqui na Old Barbearia, o corte não é só um corte, é uma experiência! Se você quer dar aquele tapa no visual, sair com a barba alinhada e o estilo renovado, chegou no lugar certo.
+
+                        Pergunta do cliente: ${message.body}
+                    `
+                }
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${process.env.LANGFLOW_API_KEY}`
+                    Authorization: `Bearer ${process.env.GEMINI_API_KEY}`
                 }
             }
         );
 
-        const botReply = response.data.outputs[0].outputs[0].results.message.text;
+        const botReply = response.data.candidates[0].output;
         client.sendMessage(message.from, botReply);
     } catch (error) {
         console.error("❌ Erro ao processar a mensagem:", error.message);
-        client.sendMessage(message.from, "Desculpe, houve um erro ao processar sua mensagem.");
+        client.sendMessage(message.from, "Rapaziada, deu um bug aqui! Mas já estamos resolvendo. 💈🔥");
     }
 });
 
