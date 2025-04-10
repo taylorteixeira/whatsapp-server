@@ -1,2 +1,4 @@
-2025/03/23-22:20:27.108 94c Creating DB C:\Users\Taylor\OneDrive\ArquiServer\GitHub\whatsapp-server\.wwebjs_auth\session\Default\Local Storage\leveldb since it was missing.
-2025/03/23-22:20:27.339 94c Reusing MANIFEST C:\Users\Taylor\OneDrive\ArquiServer\GitHub\whatsapp-server\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/04/10-10:59:19.368 2a30 Reusing MANIFEST C:\Users\Taylor\OneDrive\ArquiServer\GitHub\whatsapp-server\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/04/10-10:59:19.369 2a30 Recovering log #3
+2025/04/10-10:59:19.370 2a30 (ignoring error) C:\Users\Taylor\OneDrive\ArquiServer\GitHub\whatsapp-server\.wwebjs_auth\session\Default\Local Storage\leveldb/000003.log: dropping 119 bytes; Corruption: bad record length
+2025/04/10-10:59:19.370 2a30 Reusing old log C:\Users\Taylor\OneDrive\ArquiServer\GitHub\whatsapp-server\.wwebjs_auth\session\Default\Local Storage\leveldb/000003.log 

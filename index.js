@@ -1,7 +1,7 @@
 const { Client, LocalAuth } = require("whatsapp-web.js");
 const express = require("express");
 const axios = require("axios");
-const qrcode = require("qrcode"); // Importa a lib para gerar QR Code
+const qrcode = require("qrcode");
 
 const app = express();
 app.use(express.json());
@@ -10,27 +10,25 @@ const client = new Client({
     authStrategy: new LocalAuth()
 });
 
-let qrCodeData = ""; // Armazena o QR Code gerado
+let qrCodeData = "";
+const messageHistory = new Map(); // Armazena histórico de mensagens
 
-// Gera o QR Code e armazena para exibição no navegador
 client.on("qr", (qr) => {
     console.log("QR Code gerado! Escaneie para conectar.");
     qrCodeData = qr;
 });
 
-// Confirmação de conexão bem-sucedida
 client.on("ready", () => {
     console.log("✅ Bot conectado ao WhatsApp!");
 });
 
-// Rota para exibir o QR Code no navegador
 app.get("/qr", async (req, res) => {
     if (!qrCodeData) {
         return res.send("QR Code não disponível. Aguarde ou tente novamente.");
     }
 
     try {
-        const qrImage = await qrcode.toDataURL(qrCodeData); // Converte para imagem
+        const qrImage = await qrcode.toDataURL(qrCodeData);
         res.send(`
             <html>
                 <body style="text-align: center;">
@@ -44,9 +42,20 @@ app.get("/qr", async (req, res) => {
     }
 });
 
-// Processamento de mensagens recebidas
 client.on("message", async (message) => {
     console.log(`📩 Mensagem recebida de ${message.from}: ${message.body}`);
+    
+    if (!messageHistory.has(message.from)) {
+        messageHistory.set(message.from, []);
+    }
+    
+    const history = messageHistory.get(message.from);
+    history.push(message.body);
+    if (history.length > 5) {
+        history.shift(); // Mantém apenas as últimas 3 mensagens
+    }
+
+    const contextMessages = history.join("\n");
 
     try {
         const response = await axios.post(
@@ -56,8 +65,15 @@ client.on("message", async (message) => {
                     {
                         parts: [
                             {
-                                text: `Fala, rapaziada! Aqui na Old Barbearia, o corte não é só um corte, é uma experiência! 
-                                    Pergunta do cliente: ${message.body}`
+                                text: `Fala, rapaziada! Aqui na Old Barbearia
+
+                                                                Informações sobre Old Barbearia: Se você quer dar aquele tapa no visual, sair com a barba alinhada e o estilo renovado, chegou no lugar certo.  📅 Horários de Atendimento:  Segunda a Sexta: 09h – 20h Sábado: 08h – 18h Domingo: Fechado (dia de descanso do guerreiro! 😎) 💰 Nossos Preços:  Corte Tradicional: R$ 45 Corte , Barba: R$ 25  Barba Completa: R$ 30 Degradê Premium: R$ 50 Sobrancelha na Navalha: R$ 15 📲 Agendamentos: Nada de ficar esperando na fila! Agende seu horário pelo WhatsApp ou diretamente no nosso Instagram. Atendimento rápido, sem estresse e do jeito que você merece. Faça parte do nosso clube para ganhar desconto 🔥 Por que cortar aqui? ✅ Profissionais experientes ✅ Ambiente confortável e estiloso ✅ Atendimento pontual e de qualidade ✅ Produtos premium para cuidar do seu cabelo e barba  📍 Onde Estamos: Rua Exemplo, 123 – Seu Bairro, Sua Cidade  Bora marcar aquele corte e sair daquele jeito?
+
+                                
+                                Contexto das últimas mensagens:\n${contextMessages}\n\nPergunta do cliente: ${message.body}
+                                
+                                Responda com no maximo 5 linhas`
+                                
                             }
                         ]
                     }
@@ -67,7 +83,7 @@ client.on("message", async (message) => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                timeout: 10000 // Define um timeout de 10 segundos
+                timeout: 10000
             }
         );
 
@@ -81,21 +97,17 @@ client.on("message", async (message) => {
     }
 });
 
-// Rota para verificar se o bot está rodando
 app.get("/", (req, res) => {
     res.send("Bot do WhatsApp está rodando! Acesse /qr para escanear o código.");
 });
 
-// Define a porta do servidor
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando em: http://localhost:${PORT}`);
 });
 
-// Inicializa o bot somente fora do ambiente da Vercel
 if (process.env.NODE_ENV !== "production") {
     client.initialize();
 }
 
-// Exporta o app para Vercel
 module.exports = app;

@@ -1,2 +1,3 @@
-2025/03/23-22:20:32.155 94c Creating DB C:\Users\Taylor\OneDrive\ArquiServer\GitHub\whatsapp-server\.wwebjs_auth\session\Default\Session Storage since it was missing.
-2025/03/23-22:20:32.172 94c Reusing MANIFEST C:\Users\Taylor\OneDrive\ArquiServer\GitHub\whatsapp-server\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
+2025/04/10-10:59:23.008 2a30 Reusing MANIFEST C:\Users\Taylor\OneDrive\ArquiServer\GitHub\whatsapp-server\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
+2025/04/10-10:59:23.009 2a30 Recovering log #3
+2025/04/10-10:59:23.010 2a30 Reusing old log C:\Users\Taylor\OneDrive\ArquiServer\GitHub\whatsapp-server\.wwebjs_auth\session\Default\Session Storage/000003.log 

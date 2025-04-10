@@ -1,12 +1,72 @@
-[0323/222032.426:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Feature xr-spatial-tracking's parameters are ignored.", source:  (0)
-[0323/222032.427:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'attribution-reporting'.", source:  (0)
-[0323/222032.427:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'compute-pressure'.", source:  (0)
-[0323/222032.427:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.", source:  (0)
-[0323/222032.428:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'private-state-token-issuance'.", source:  (0)
-[0323/222032.429:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'shared-storage'.", source:  (0)
-[0323/222032.430:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'shared-storage-select-url'.", source:  (0)
-[0323/222032.430:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'private-state-token-redemption'.", source:  (0)
-[0323/222032.430:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'unload'.", source:  (0)
-[0323/222032.431:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'window-management'.", source:  (0)
-[0323/222054.161:INFO:CONSOLE(157)] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v4/yd/r/uvGLqTcUnbs.js (157)
-[0323/222205.010:INFO:CONSOLE(157)] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v4/yd/r/uvGLqTcUnbs.js (157)
+[0410/105923.256:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Feature xr-spatial-tracking's parameters are ignored.", source:  (0)
+[0410/105923.256:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'attribution-reporting'.", source:  (0)
+[0410/105923.256:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'compute-pressure'.", source:  (0)
+[0410/105923.256:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.", source:  (0)
+[0410/105923.256:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'private-state-token-issuance'.", source:  (0)
+[0410/105923.257:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'shared-storage'.", source:  (0)
+[0410/105923.257:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'shared-storage-select-url'.", source:  (0)
+[0410/105923.257:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'private-state-token-redemption'.", source:  (0)
+[0410/105923.257:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'unload'.", source:  (0)
+[0410/105923.257:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'window-management'.", source:  (0)
+[0410/105937.454:ERROR:entry_impl.cc(1072)] No file for 8000001a
+[0410/105944.208:INFO:CONSOLE(151)] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v4/yW/r/UeM0HR48keL.js (151)
+[0410/105944.268:ERROR:entry_impl.cc(1072)] No file for 80000021
+[0410/105944.280:ERROR:entry_impl.cc(1072)] No file for 80000022
+[0410/105944.281:ERROR:entry_impl.cc(1072)] No file for 80000023
+[0410/105944.281:ERROR:entry_impl.cc(1072)] No file for 80000024
+[0410/105944.286:ERROR:entry_impl.cc(1072)] No file for 80000025
+[0410/105944.288:ERROR:entry_impl.cc(1072)] No file for 80000026
+[0410/105944.289:ERROR:entry_impl.cc(1072)] No file for 80000027
+[0410/105944.290:ERROR:entry_impl.cc(1072)] No file for 80000028
+[0410/105944.290:ERROR:entry_impl.cc(1072)] No file for 8000002b
+[0410/105944.291:ERROR:entry_impl.cc(1072)] No file for 8000002c
+[0410/105944.292:ERROR:entry_impl.cc(1072)] No file for 8000002a
+[0410/105944.293:ERROR:entry_impl.cc(1072)] No file for 8000002e
+[0410/105944.293:ERROR:entry_impl.cc(1072)] No file for 8000002f
+[0410/105944.294:ERROR:entry_impl.cc(1072)] No file for 8000002d
+[0410/105944.294:ERROR:entry_impl.cc(1072)] No file for 80000030
+[0410/105944.300:ERROR:entry_impl.cc(1072)] No file for 80000031
+[0410/105944.301:ERROR:entry_impl.cc(1072)] No file for 80000033
+[0410/105944.302:ERROR:entry_impl.cc(1072)] No file for 80000035
+[0410/105944.302:ERROR:entry_impl.cc(1072)] No file for 80000032
+[0410/105944.305:ERROR:entry_impl.cc(1072)] No file for 80000036
+[0410/105944.306:ERROR:entry_impl.cc(1072)] No file for 80000034
+[0410/105944.306:ERROR:entry_impl.cc(1072)] No file for 8000003c
+[0410/105944.306:ERROR:entry_impl.cc(1072)] No file for 80000037
+[0410/105944.307:ERROR:entry_impl.cc(1072)] No file for 80000038
+[0410/105944.309:ERROR:entry_impl.cc(1072)] No file for 80000039
+[0410/105944.320:ERROR:entry_impl.cc(1072)] No file for 8000003a
+[0410/105944.320:ERROR:entry_impl.cc(1072)] No file for 8000003b
+[0410/105944.324:ERROR:entry_impl.cc(1072)] No file for 8000003d
+[0410/105944.342:ERROR:entry_impl.cc(1072)] No file for 8000003f
+[0410/105944.375:ERROR:entry_impl.cc(1072)] No file for 8000003e
+[0410/105944.382:ERROR:entry_impl.cc(1072)] No file for 80000040
+[0410/105945.237:ERROR:entry_impl.cc(1072)] No file for 80000041
+[0410/105945.307:ERROR:entry_impl.cc(1072)] No file for 80000042
+[0410/105945.308:ERROR:entry_impl.cc(1072)] No file for 80000044
+[0410/105945.308:ERROR:entry_impl.cc(1072)] No file for 80000043
+[0410/105945.308:ERROR:entry_impl.cc(1072)] No file for 80000045
+[0410/105945.309:ERROR:entry_impl.cc(1072)] No file for 80000046
+[0410/105945.310:ERROR:entry_impl.cc(1072)] No file for 80000049
+[0410/105945.426:ERROR:entry_impl.cc(1072)] No file for 80000047
+[0410/105945.427:ERROR:entry_impl.cc(1072)] No file for 80000048
+[0410/105945.427:ERROR:entry_impl.cc(1072)] No file for 8000004a
+[0410/105945.427:ERROR:entry_impl.cc(1072)] No file for 8000004b
+[0410/105945.428:ERROR:entry_impl.cc(1072)] No file for 8000004c
+[0410/105945.428:ERROR:entry_impl.cc(1072)] No file for 8000004e
+[0410/105945.428:ERROR:entry_impl.cc(1072)] No file for 8000004d
+[0410/105945.429:ERROR:entry_impl.cc(1072)] No file for 8000004f
+[0410/105945.429:ERROR:entry_impl.cc(1072)] No file for 80000050
+[0410/105945.429:ERROR:entry_impl.cc(1072)] No file for 80000052
+[0410/105945.430:ERROR:entry_impl.cc(1072)] No file for 80000051
+[0410/105945.430:ERROR:entry_impl.cc(1072)] No file for 80000053
+[0410/105945.431:ERROR:entry_impl.cc(1072)] No file for 80000056
+[0410/105945.431:ERROR:entry_impl.cc(1072)] No file for 80000055
+[0410/105945.432:ERROR:entry_impl.cc(1072)] No file for 80000054
+[0410/105945.432:ERROR:entry_impl.cc(1072)] No file for 80000058
+[0410/105945.432:ERROR:entry_impl.cc(1072)] No file for 80000057
+[0410/105945.433:ERROR:entry_impl.cc(1072)] No file for 80000059
+[0410/105950.837:ERROR:entry_impl.cc(1072)] No file for 80000020
+[0410/110440.889:INFO:CONSOLE(1254)] "Failed to parse video contentType: video/mp4; codecs=avc1.42000a", source: https://static.whatsapp.net/rsrc.php/v4ie6z4/yf/l/rt/xTRm-SkDokx.js (1254)
+[0410/110440.889:INFO:CONSOLE(1254)] "Failed to parse video contentType: video/mp4; codecs=hev1.1.6.L93.B0", source: https://static.whatsapp.net/rsrc.php/v4ie6z4/yf/l/rt/xTRm-SkDokx.js (1254)
+[0410/110441.704:INFO:CONSOLE(151)] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v4/yW/r/UeM0HR48keL.js (151)
