@@ -63,7 +63,7 @@ export default function Home() {
 
   const handlePlanClick = (plan) => {
     const message = `Olá! Gostaria de saber mais sobre o plano ${plan.name} de agentes de IA para WhatsApp.`
-    const whatsappUrl = `https://api.whatsapp.com/send/?phone=554896651188&text=${encodeURIComponent(
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=5548920027294&text=${encodeURIComponent(
       message
     )}&type=phone_number&app_absent=0`
     window.open(whatsappUrl, "_blank")
@@ -126,7 +126,13 @@ export default function Home() {
               Contato
             </a>
           </div>
-          <button className="btn-primary hidden md:block">Começar Agora</button>
+          <button className="btn-primary hidden md:block">
+            <a
+              href="#pricing"
+            >
+              Começar agora
+            </a>
+          </button>
           <button className="md:hidden text-gray-600">
             <svg
               xmlns="http://www.w3.org/2000/svg"
