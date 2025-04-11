@@ -59,33 +59,40 @@ client.on("message", async (message) => {
 
     try {
         const response = await axios.post(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyB1jMMF_FMRJiWZKIb1CtuSqvI3gZMysRg`,
-            {
-                contents: [
-                    {
-                        parts: [
-                            {
-                                text: `Fala, rapaziada! Aqui na Old Barbearia
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyB1jMMF_FMRJiWZKIb1CtuSqvI3gZMysRg`,
+          {
+            contents: [
+              {
+                parts: [
+                  {
+                    text: `Fala, rapaziada!
 
-                                                                Informações sobre Old Barbearia: Se você quer dar aquele tapa no visual, sair com a barba alinhada e o estilo renovado, chegou no lugar certo.  📅 Horários de Atendimento:  Segunda a Sexta: 09h – 20h Sábado: 08h – 18h Domingo: Fechado (dia de descanso do guerreiro! 😎) 💰 Nossos Preços:  Corte Tradicional: R$ 45 Corte , Barba: R$ 25  Barba Completa: R$ 30 Degradê Premium: R$ 50 Sobrancelha na Navalha: R$ 15 📲 Agendamentos: Nada de ficar esperando na fila! Agende seu horário pelo WhatsApp ou diretamente no nosso Instagram. Atendimento rápido, sem estresse e do jeito que você merece. Faça parte do nosso clube para ganhar desconto 🔥 Por que cortar aqui? ✅ Profissionais experientes ✅ Ambiente confortável e estiloso ✅ Atendimento pontual e de qualidade ✅ Produtos premium para cuidar do seu cabelo e barba  📍 Onde Estamos: Rua Exemplo, 123 – Seu Bairro, Sua Cidade  Bora marcar aquele corte e sair daquele jeito?
+                                Primeiro Agente(
+                                Automatize seu Atendimento com Agentes de IA
+                                IA Avançada Respostas inteligentes e personalizadas para cada cliente, aprendendo com cada interação.
+                                Atendimento 24/7 seus clientes recebem atendimento instantâneo a qualquer hora do dia ou da noite.
+                                Relatórios Detalhados acompanhe métricas e desempenho do atendimento para otimizar sua estratégia.)
+
+
+                                Segundo Agente(
+                                Informações sobre Old Barbearia:📅 Horários de Atendimento:  Segunda a Sexta: 09h – 20h Sábado: 08h – 18h Domingo: Fechado (dia de descanso do guerreiro! 😎) 💰 Nossos Preços:  Corte Tradicional: R$ 45 Corte , Barba: R$ 25  Barba Completa: R$ 30 Degradê Premium: R$ 50 Sobrancelha na Navalha: R$ 15 📲 Agendamentos: Nada de ficar esperando na fila! Agende seu horário pelo WhatsApp ou diretamente no nosso Instagram. Atendimento rápido, sem estresse e do jeito que você merece.📍 Onde Estamos: Rua Exemplo, 123 – Seu Bairro, Sua Cidade  Bora marcar aquele corte e sair daquele jeito?)
 
                                 
-                                Contexto das últimas mensagens:\n${contextMessages}\n\nPergunta do cliente: ${message.body}
+                                Contexto das últimas mensagens para saber qual agente vai atender e responder como o dono do sistema para vender:\n${contextMessages}\n\nPergunta do cliente: ${message.body}
                                 
-                                Responda com no maximo 5 linhas`
-                                
-                            }
-                        ]
-                    }
-                ]
+                                Responda com no maximo 5 linhas`,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
             },
-            {
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                timeout: 10000
-            }
-        );
+            timeout: 10000,
+          }
+        )
 
         const botReply = response?.data?.candidates?.[0]?.content?.parts?.[0]?.text || 
             "Rapaziada, deu um bug aqui! Mas já estamos resolvendo. 💈🔥";
